@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation</title>
+    <link rel="shortcut icon" href="./Image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script>
+         fetch('https://json.geoiplookup.io')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("ip").innerHTML = data.ip
+            document.getElementById("hostname").innerHTML = data.hostname
+            document.getElementById("asn").innerHTML = data.asn
+            document.getElementById("connection_type").innerHTML = data.connection_type
+            document.getElementById("country_name").innerHTML = data.country_name
+            document.getElementById("region").innerHTML = data.region
+            document.getElementById("district").innerHTML = data.district
+            document.getElementById("city").innerHTML = data.city
+            document.getElementById("latitude").innerHTML = data.latitude
+            document.getElementById("longitude").innerHTML = data.longitude
+            document.getElementById("timezone_name").innerHTML = data.timezone_name
+            document.getElementById("isp").innerHTML = data.isp
+            document.getElementById("asn_org").innerHTML = data.asn_org
+            document.getElementById("country_code").innerHTML = data.country_code
+            document.getElementById("currency_code").innerHTML = data.currency_code
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="IPText animate__animated animate__backInDown">
+            <h1>IP Address Lookup</h1>
+            <h4>Fast response and accurate data</h4>
+            <p>The results provide quite a bit of information, including information the city, state/region, postal/zip code, country name, ISP, and time zone. Consequently, this data is used by various agencies to find the owner of an IPv4 or IPv6 address.</p>
+            
+            <p>When using an IP address lookup tool, users often think they are going to find the exact location of an IP address. This is simply not true. No IP address database can provide the exact physical address of an IP address location. At best, you'll get the exact city in which the user of the IP is located.</p>
+            <button>Look IP Address</button>
+        </div>
+        <div class="geolocation">
+            <div class="MyIp animate__animated animate__fadeInRightBig animate__slow">
+                <p>My IP Address: <span id="ip"></span></p>
+            </div>
+            <div class="ipResult animate__animated animate__zoomIn animate__delay-1s animate__slower">
+                
+                <table>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/hosting.png" alt=""></span> <span>Hostname</span></th>
+                        <td width="60%" id="hostname"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/cloud-computing.png" alt=""></span> <span>ASN</span></th>
+                        <td width="60%" id="asn"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/connection.png" alt=""></span> <span>Connection Type</span></th>
+                        <td width="60%" id="connection_type"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/international-delivery.png" alt=""></span> <span>Country</span></th>
+                        <td width="60%" id="country_name"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/buildings.png" alt=""></span> <span>State / Region</span></th>
+                        <td width="60%" id="region"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/australia.png" alt=""></span> <span>District / County</span></th>
+                        <td width="60%" id="district"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/smart-city.png" alt=""></span> <span>City</span></th>
+                        <td width="60%" id="city"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/coordinate-route.png" alt=""></span> <span>Coordinates</span></th>
+                        <td width="60%"><span id="latitude"></span>, <span id="longitude"></span></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/back-in-time.png" alt=""></span> <span>Timezone</span></th>
+                        <td width="60%" id="timezone_name"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/isp.png" alt=""></span> <span>ISP</span></th>
+                        <td width="60%" id="isp"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/isp_org.png" alt=""></span> <span>ASN Org</span></th>
+                        <td width="60%" id="asn_org"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/bangladesh.png" alt=""></span> <span>Country Code</span></th>
+                        <td width="60%" id="country_code"></td>
+                    </tr>
+                    <tr>
+                        <th width="40%"><span class="ipIcon"><img src="./Image/taka.png" alt=""></span> <span>Currency Code</span></th>
+                        <td width="60%" id="currency_code"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    <div class="footerText">
+        <p class="lead">Mentored by <a class="linkTxt" href="https://courseable.edu.bd" target="_blank">CourseAble</a>. Coded by <a class="linkTxt" href="https://www.leonislam.xyz" target="_blank">Leon Islam</a>.</p>
+    </div>
+</body>
+</html>
